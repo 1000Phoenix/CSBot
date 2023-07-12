@@ -112,6 +112,7 @@ client.on('interactionCreate', async (interaction) => {
 
       const playerListEmbed = new EmbedBuilder()
         .setTitle('Player List')
+		.setColor(getEmbedColor())
         .setDescription(players.slice(startIndex, endIndex).map(player => `Player ${player.name} with ID ${player.id} is online.`).join('\n'));
 
       const replyOptions = {
@@ -177,6 +178,7 @@ client.on('interactionCreate', async (interaction) => {
 
                 const playerInfoEmbed = new EmbedBuilder()
                     .setTitle('Player Information')
+					.setColor(getEmbedColor())
                     .addFields(
                         { name: 'Name', value: player.name },
                     )
@@ -226,6 +228,7 @@ client.on('interactionCreate', async (interaction) => {
         const staffList = onlineStaff.map(player => `Staff member ${player.name} with ID ${player.id} is online.`).join('\n');
         const staffListEmbed = new EmbedBuilder()
           .setTitle('Online Staff Members')
+		  .setColor(getEmbedColor())
           .setDescription(staffList);
 
         interaction.reply({
@@ -269,6 +272,7 @@ client.on('interactionCreate', async (interaction) => {
           const memberList = onlineMembers.join('\n');
           const gangListEmbed = new EmbedBuilder()
             .setTitle(`${gangDisplayName} - Online Members`)
+			.setColor(getEmbedColor())
             .setDescription(memberList);
 
           interaction.reply({
@@ -331,6 +335,7 @@ client.on('interactionCreate', async (interaction) => {
 
         playerInfoEmbed = new EmbedBuilder()
           .setTitle('Player Information')
+		  .setColor(getEmbedColor())
           .addFields(
             { name: 'Name', value: matchingPlayer.name },
             { name: 'ID', value: matchingPlayer.id.toString() },
@@ -341,6 +346,7 @@ client.on('interactionCreate', async (interaction) => {
         // Build the embed with limited player info
         playerInfoEmbed = new EmbedBuilder()
           .setTitle('Player Information')
+		  .setColor(getEmbedColor())
           .addFields(
             { name: 'Name', value: matchingPlayer.name },
             { name: 'ID', value: matchingPlayer.id.toString() },
@@ -400,6 +406,7 @@ client.on('interactionCreate', async (interaction) => {
     // Create an embed message with the lasagna image
     const lasagnaEmbed = new EmbedBuilder()
       .setTitle('Delicious Lasagna')
+	  .setColor(getEmbedColor())
       .setImage(lasagnaImageUrl);
 
     // Send the embed message as a reply
@@ -441,6 +448,7 @@ client.on('interactionCreate', async (interaction) => {
 
   const playerListEmbed = new EmbedBuilder()
     .setTitle('Player List')
+	.setColor(getEmbedColor())
     .setDescription(players.slice(startIndex, endIndex).map(player => `Player ${player.name} with ID ${player.id} is online.`).join('\n'));
 
   const replyOptions = {

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "discord-api-types": "^0.37.48",
+    "discord.js": "^14.11.0",
+    "fivem": "^2.1.8"
+  }
+}

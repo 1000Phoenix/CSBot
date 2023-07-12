@@ -1,0 +1,45 @@
+{
+  "clientId": "",
+  "guildId": "",
+  "token": "",
+  "serverIP": ""
+  "emojiIds": {
+    "steam": "",
+    "license": "",
+    "license2": "",
+    "license3": "",
+    "license4": "",
+    "license5": "",
+    "xbl": "",
+    "live": "",
+    "discord": "",
+    "fivem": ""
+  },
+  "staffHexes": [
+    { "hex": "", "comment": "Staff member 1" },
+    { "hex": "", "comment": "Staff member 2" }
+  ],
+"gangList": [
+    {
+      "name": "Gang1",
+	  "displayName": "Gang1",
+      "members": [
+        { "hex": "", "comment": "GangMember1" },
+        { "hex": "", "comment": "GangMember2" }
+      ]
+    },
+    {
+      "name": "Gang2",
+	  "displayName": "Gang2",
+      "members": [
+        { "hex": "", "comment": "GangMember3" },
+        { "hex": "", "comment": "GangMember4" }
+      ]
+    },
+    {
+      "name": "Gang3",
+	  "displayName": "Gang3",
+      "members": [{ "hex": "", "comment": "GangMember5" }]
+    }
+  ]
+}

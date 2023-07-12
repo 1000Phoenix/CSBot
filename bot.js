@@ -59,8 +59,8 @@ const commands = [
   ],
   },
   {
-  name: 'lasagna'
-  description: 'Cook a delicious lasagna!'
+	name: 'lasagna',
+	description: 'Cook a delicious lasagna!',
   },
 ];
 

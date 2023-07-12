@@ -2,7 +2,15 @@
   "clientId": "",
   "guildId": "",
   "token": "",
-  "serverIP": ""
+  "serverIP": "",
+  "profiletext": "",
+  "profileurl": "",
+  "moderators": [
+    "", "" 
+	],
+  "admins": [
+    "", "" 
+	],
   "emojiIds": {
     "steam": "",
     "license": "",

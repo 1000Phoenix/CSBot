@@ -1,6 +1,6 @@
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { Client, Intents, GatewayIntentBits, EmbedBuilder } = require('discord.js');
+const { Client, Intents, GatewayIntentBits, EmbedBuilder, ColorResolvable } = require('discord.js');
 const FiveM = require('fivem');
 
 const config = require('./config.json');
@@ -12,6 +12,10 @@ const playersPerPage = 50; // Number of players to display per page
 let currentPage = 0; // Current page number
 
 const srv = new FiveM.Server(serverIP);
+function getEmbedColor() {
+  const colorHex = config.embedColor || '#FFFFFF'; // Use the color value from the config or default to white
+  return colorHex instanceof ColorResolvable ? colorHex : parseInt(colorHex.replace('#', ''), 16);
+}
 
 const commands = [
   {

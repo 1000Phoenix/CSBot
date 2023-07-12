@@ -411,7 +411,10 @@ client.on('interactionCreate', async (interaction) => {
     });
   } catch (err) {
     console.error('An error occurred while sending lasagna image: ', err);
-    interaction.reply('Failed to send lasagna image.');
+    interaction.reply({ 
+		content: 'Failed to send lasagna image.', 
+		ephemeral: true,
+	});
   }
 }
 });

@@ -57,5 +57,13 @@ async function execute(interaction) {
 module.exports = {
   name: 'playerinfo',
   description: 'Get information about a specific player on the FiveM server.',
+  options: [
+    {
+      name: 'name',
+      type: 'STRING',
+      description: 'Name of the player',
+      required: true,
+    },
+  ],
   execute,
 };

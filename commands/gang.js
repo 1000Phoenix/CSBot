@@ -65,5 +65,13 @@ async function execute(interaction) {
 module.exports = {
   name: 'gang',
   description: 'Check which gang members are online on the FiveM server.',
+  options: [
+    {
+      name: 'gangname',
+      type: 'STRING',
+      description: 'Name of the gang',
+      required: true,
+    },
+  ],
   execute,
 };

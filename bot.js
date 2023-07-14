@@ -12,6 +12,7 @@ const rest = new REST({ version: '9' }).setToken(config.token);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 // Refresh commands with Discord API
+// Refresh commands with Discord API
 (async () => {
   try {
     console.log('Started refreshing application (/) commands.');
@@ -20,7 +21,18 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
     for (const file of commandFiles) {
       const command = require(`./commands/${file}`);
       client.commands.set(command.name, command);
-      commands.push(command);
+      
+      // Convert command option types to their API representations
+      const commandOptions = command.options ? command.options.map(option => {
+        return { ...option, type: commandOptionTypeToNumber(option.type) };
+      }) : [];
+
+      // Add the command to the array
+      commands.push({
+        name: command.name,
+        description: command.description,
+        options: commandOptions,
+      });
     }
 
     await rest.put(
@@ -33,6 +45,24 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
     console.error(error);
   }
 })();
+
+// Helper function to convert command option types to their API representations
+function commandOptionTypeToNumber(type) {
+  const types = {
+    'SUB_COMMAND': 1,
+    'SUB_COMMAND_GROUP': 2,
+    'STRING': 3,
+    'INTEGER': 4,
+    'BOOLEAN': 5,
+    'USER': 6,
+    'CHANNEL': 7,
+    'ROLE': 8,
+    'MENTIONABLE': 9,
+    'NUMBER': 10
+  };
+
+  return types[type] || 3; // Default to 'STRING' if the type is not recognized
+}
 
 client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);

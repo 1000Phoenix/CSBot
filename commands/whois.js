@@ -106,5 +106,13 @@ async function execute(interaction) {
 module.exports = {
   name: 'whois',
   description: 'Get information about a specific player on the FiveM server using their ID.',
+  options: [
+    {
+      name: 'id',
+      type: 'INTEGER',
+      description: 'The ID of the player',
+      required: true,
+    },
+  ],
   execute,
 };

@@ -1,16 +1,38 @@
 const { Client, GatewayIntentBits } = require('discord.js');
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 const config = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers] });
 client.commands = new Map();
 
+const rest = new REST({ version: '9' }).setToken(config.token);
+
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
-  client.commands.set(command.name, command);
-}
+// Refresh commands with Discord API
+(async () => {
+  try {
+    console.log('Started refreshing application (/) commands.');
+
+    const commands = [];
+    for (const file of commandFiles) {
+      const command = require(`./commands/${file}`);
+      client.commands.set(command.name, command);
+      commands.push(command);
+    }
+
+    await rest.put(
+      Routes.applicationGuildCommands(config.clientId, config.guildId),
+      { body: commands },
+    );
+
+    console.log('Successfully reloaded application (/) commands.');
+  } catch (error) {
+    console.error(error);
+  }
+})();
 
 client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);

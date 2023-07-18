@@ -22,9 +22,13 @@
     "discord": "",
     "fivem": ""
   },
-  "staffHexes": [
-    { "hex": "", "comment": "Staff member 1" },
-    { "hex": "", "comment": "Staff member 2" }
+  "staffMembers": [
+    { "hex": "", "comment": "Staff member 1", "level": "" },
+    { "hex": "", "comment": "Staff member 2", "level": "" }
+  ],
+  "staffLevels": [
+    "",
+    ""
   ],
 "gangList": [
     {

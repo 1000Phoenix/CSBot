@@ -8,21 +8,34 @@ async function execute(interaction) {
   try {
     const players = await srv.getPlayersAll();
 
-    // Filter the player list to include only staff members
-    const onlineStaff = players.filter((player) => {
-      return player.identifiers.some((identifier) => {
-        return config.staffHexes.some((staffHex) => staffHex.hex.toLowerCase() === identifier.toLowerCase());
+    const staffLists = {};
+
+    config.staffLevels.forEach((level) => {
+      // Filter the player list to include only staff members of this level
+      const onlineStaff = players.filter((player) => {
+        return player.identifiers.some((identifier) => {
+          return config.staffMembers.some((staffMember) => {
+            return staffMember.hex.toLowerCase() === identifier.toLowerCase() && staffMember.level === level;
+          });
+        });
       });
+
+      if (onlineStaff.length > 0) {
+        // Prepare a list of online staff members for the message
+        staffLists[level] = onlineStaff.map(player => `Staff member ${player.name} with ID ${player.id} is online.`).join('\n');
+      }
     });
 
     // Check if there are any staff members online
-    if (onlineStaff.length > 0) {
-      // Prepare a list of online staff members for the message
-      const staffList = onlineStaff.map(player => `Staff member ${player.name} with ID ${player.id} is online.`).join('\n');
+    if (Object.keys(staffLists).length > 0) {
       const staffListEmbed = new EmbedBuilder()
         .setTitle('Online Staff Members')
-        .setColor(config.embedColor)
-        .setDescription(staffList);
+        .setColor(config.embedColor);
+
+      // Add a field for each staff level
+      for (const [levelName, staffList] of Object.entries(staffLists)) {
+        staffListEmbed.addFields({ name: levelName, value: staffList });
+      }
 
       interaction.reply({
         embeds: [staffListEmbed],

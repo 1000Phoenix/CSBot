@@ -12,7 +12,6 @@ const rest = new REST({ version: '9' }).setToken(config.token);
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 // Refresh commands with Discord API
-// Refresh commands with Discord API
 (async () => {
   try {
     console.log('Started refreshing application (/) commands.');

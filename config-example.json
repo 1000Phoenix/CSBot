@@ -7,50 +7,58 @@
   "profileurl": "",
   "embedColor": "",
   "moderators": [
-    "", "" 
-	],
+      "", ""
+  ],
   "admins": [
-    "", "" 
-	],
+      "", ""
+  ],
   "emojiIds": {
-    "steam": "",
-    "license": "",
-    "license2": "",
-    "license3": "",
-    "xbl": "",
-    "live": "",
-    "discord": "",
-    "fivem": ""
+      "steam": "",
+      "license": "",
+      "license2": "",
+      "license3": "",
+      "xbl": "",
+      "live": "",
+      "discord": "",
+      "fivem": ""
   },
   "staffMembers": [
-    { "hex": "", "comment": "Staff member 1", "level": "" },
-    { "hex": "", "comment": "Staff member 2", "level": "" }
+      { "hex": "", "comment": "Staff member 1", "level": "" },
+      { "hex": "", "comment": "Staff member 2", "level": "" }
   ],
   "staffLevels": [
-    "",
-    ""
+      "",
+      ""
   ],
-"gangList": [
-    {
-      "name": "Gang1",
-	  "displayName": "Gang1",
-      "members": [
-        { "hex": "", "comment": "GangMember1" },
-        { "hex": "", "comment": "GangMember2" }
-      ]
-    },
-    {
-      "name": "Gang2",
-	  "displayName": "Gang2",
-      "members": [
-        { "hex": "", "comment": "GangMember3" },
-        { "hex": "", "comment": "GangMember4" }
-      ]
-    },
-    {
-      "name": "Gang3",
-	  "displayName": "Gang3",
-      "members": [{ "hex": "", "comment": "GangMember5" }]
-    }
-  ]
+  "gangList": [
+      {
+          "name": "Gang1",
+          "displayName": "Gang1",
+          "members": [
+              { "hex": "", "comment": "GangMember1" },
+              { "hex": "", "comment": "GangMember2" }
+          ]
+      },
+      {
+          "name": "Gang2",
+          "displayName": "Gang2",
+          "members": [
+              { "hex": "", "comment": "GangMember3" },
+              { "hex": "", "comment": "GangMember4" }
+          ]
+      },
+      {
+          "name": "Gang3",
+          "displayName": "Gang3",
+          "members": [
+              { "hex": "", "comment": "GangMember5" }
+          ]
+      }
+  ],
+  "database": {
+      "host": "localhost",
+      "user": "",
+      "password": "",
+      "database": ""
+  }
 }

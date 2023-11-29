@@ -1,5 +1,5 @@
 const FiveM = require('fivem');
-const { EmbedBuilder } = require('discord.js');  // Update this line
+const { EmbedBuilder } = require('discord.js');
 const config = require('../config.json');
 const serverIP = config.serverIP;
 const playersPerPage = 50; // Number of players to display per page
@@ -28,7 +28,7 @@ module.exports = {
 
       const playerCountMessage = `There are currently ${totalPlayers} player(s) online. Showing players ${startIndex + 1}-${endIndex}.`;
 
-      const playerListEmbed = new EmbedBuilder()  // Update this line
+      const playerListEmbed = new EmbedBuilder()
         .setTitle('Player List')
         .setColor(config.embedColor)
         .setDescription(players.slice(startIndex, endIndex).map(player => `Player ${player.name} with ID ${player.id} is online.`).join('\n'));
@@ -89,7 +89,6 @@ module.exports = {
       if (currentPage[interaction.guild.id] > 0) {
         currentPage[interaction.guild.id]--;
       }
-      // Now re-run the execute command to display the updated page.
       await this.execute(interaction, true);
     } else if (interaction.customId === 'next') {
       const totalPlayers = await srv.getPlayers();
@@ -97,7 +96,6 @@ module.exports = {
       if (currentPage[interaction.guild.id] < pageCount - 1) {
         currentPage[interaction.guild.id]++;
       }
-      // Now re-run the execute command to display the updated page.
       await this.execute(interaction, true);
     }
   }

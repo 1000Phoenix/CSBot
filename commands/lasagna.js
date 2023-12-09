@@ -10,7 +10,9 @@ async function execute(interaction) {
     const lasagnaEmbed = new EmbedBuilder()
       .setTitle('Delicious Lasagna')
       .setColor(config.embedColor)
-      .setImage(lasagnaImageUrl);
+      .setImage(lasagnaImageUrl)
+      .setFooter({ text: config.botName, iconURL: config.botLogo })
+      .setTimestamp();
 
     // Send the embed message as a reply
     interaction.reply({

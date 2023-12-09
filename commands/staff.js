@@ -30,7 +30,9 @@ async function execute(interaction) {
     if (Object.keys(staffLists).length > 0) {
       const staffListEmbed = new EmbedBuilder()
         .setTitle('Online Staff Members')
-        .setColor(config.embedColor);
+        .setColor(config.embedColor)
+        .setFooter({ text: config.botName, iconURL: config.botLogo })
+        .setTimestamp();
 
       // Add a field for each staff level
       for (const [levelName, staffList] of Object.entries(staffLists)) {

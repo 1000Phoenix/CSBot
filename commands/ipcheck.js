@@ -33,7 +33,9 @@ async function execute(interaction) {
             const ipEmbed = new EmbedBuilder()
               .setTitle(`Server IP - ${serverCode}`)
               .setColor(config.embedColor)
-              .setDescription(`**${serverName}**\nIP: ${ipAddress}:${port}`);
+              .setDescription(`**${serverName}**\nIP: ${ipAddress}:${port}`)
+              .setFooter({ text: config.botName, iconURL: config.botLogo })
+              .setTimestamp();
 
             interaction.reply({
               embeds: [ipEmbed],

@@ -31,7 +31,9 @@ async function execute(interaction) {
             { name: 'ID', value: player.id.toString() },
             { name: 'Identifiers', value: identifiersWithEmojis.join('\n') },
             { name: 'Ping', value: player.ping.toString() },
-          );
+          )
+          .setFooter({ text: config.botName, iconURL: config.botLogo })
+          .setTimestamp();
 
         interaction.reply({
           embeds: [playerInfoEmbed],

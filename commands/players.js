@@ -31,7 +31,9 @@ module.exports = {
       const playerListEmbed = new EmbedBuilder()
         .setTitle('Player List')
         .setColor(config.embedColor)
-        .setDescription(players.slice(startIndex, endIndex).map(player => `Player ${player.name} with ID ${player.id} is online.`).join('\n'));
+        .setDescription(players.slice(startIndex, endIndex).map(player => `Player ${player.name} with ID ${player.id} is online.`).join('\n'))
+        .setFooter({ text: config.botName, iconURL: config.botLogo })
+        .setTimestamp();
 
       const replyOptions = {
         content: playerCountMessage,

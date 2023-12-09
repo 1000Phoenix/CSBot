@@ -44,7 +44,9 @@ async function execute(interaction) {
             { name: 'ID', value: matchingPlayer.id.toString() },
             { name: 'Identifiers', value: identifiersWithEmojis.join('\n') },
             { name: 'Ping', value: matchingPlayer.ping.toString() }
-          );
+          )
+          .setFooter({ text: config.botName, iconURL: config.botLogo })
+          .setTimestamp();
       } else {
         // Build the embed with limited player info
         playerInfoEmbed = new EmbedBuilder()
@@ -54,7 +56,9 @@ async function execute(interaction) {
             { name: 'Name', value: matchingPlayer.name },
             { name: 'ID', value: matchingPlayer.id.toString() },
             { name: 'Ping', value: matchingPlayer.ping.toString() }
-          );
+          )
+          .setFooter({ text: config.botName, iconURL: config.botLogo })
+          .setTimestamp();
       }
 
       const replyOptions = {

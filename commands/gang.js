@@ -32,7 +32,9 @@ async function execute(interaction) {
           const gangListEmbed = new EmbedBuilder()
             .setTitle(`${gangDisplayName} - Online Members`)
             .setColor(config.embedColor)
-            .setDescription(memberList);
+            .setDescription(memberList)
+            .setFooter({ text: config.botName, iconURL: config.botLogo })
+            .setTimestamp();
 
           interaction.reply({
             embeds: [gangListEmbed],

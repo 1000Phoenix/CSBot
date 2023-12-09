@@ -10,7 +10,9 @@ async function execute(interaction) {
     const pieEmbed = new EmbedBuilder()
       .setTitle('Delicious Pie')
       .setColor(config.embedColor)
-      .setImage(pieImageUrl);
+      .setImage(pieImageUrl)
+      .setFooter({ text: config.botName, iconURL: config.botLogo })
+      .setTimestamp();
 
     // Send the embed message as a reply
     interaction.reply({

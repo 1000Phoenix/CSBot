@@ -21,15 +21,17 @@ module.exports = {
       });
     }
 
+    // Acknowledge the interaction immediately and defer the reply
+    await interaction.deferReply({ ephemeral: true });
+
     // Get the message to echo from the command options
     const messageToEcho = interaction.options.getString('message');
 
     // Send the message to echo
     await interaction.channel.send(messageToEcho);
 
-    // Delete the original command message if possible
-    if (interaction.deletable) {
-    await interaction.delete();
-  }
+    // Since we've deferred the reply, we can now delete the deferred reply
+    // This will prevent the "The application did not respond" message
+    await interaction.deleteReply();
   },
 };

@@ -13,8 +13,8 @@ module.exports = {
     },
   ],
   async execute(interaction) {
-    // Check if the user is a moderator
-    if (!config.moderators.includes(interaction.user.id)) {
+    // Check if the user is a moderator or admin
+    if (!config.moderators.includes(interaction.user.id) && !config.admins.includes(interaction.user.id)) {
       return interaction.reply({
         content: 'You do not have permission to use the echo command.',
         ephemeral: true,

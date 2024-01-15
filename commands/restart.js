@@ -6,7 +6,7 @@ module.exports = {
   description: 'Restarts the bot.',
   async execute(interaction) {
     // Check if the user is authorized to restart the bot
-    if (interaction.user.id !== config.admins) {
+    if (!config.admins.includes(interaction.user.id)) {
       return interaction.reply({
         content: 'You do not have permission to restart the bot.',
         ephemeral: true,

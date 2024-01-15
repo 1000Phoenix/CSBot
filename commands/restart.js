@@ -16,7 +16,7 @@ module.exports = {
     try {
       await interaction.reply({
         content: 'Restarting the bot...',
-        ephemeral: true,
+        ephemeral: false,
       });
 
       // Use PM2 to restart the bot

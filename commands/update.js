@@ -16,7 +16,7 @@ module.exports = {
     // Inform the user that the bot is attempting to update
     await interaction.reply({
       content: 'Attempting to update the bot...',
-      ephemeral: true,
+      ephemeral: false,
     });
 
     // Pull the latest changes from GitHub and restart the bot using PM2

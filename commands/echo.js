@@ -24,10 +24,12 @@ module.exports = {
     // Get the message to echo from the command options
     const messageToEcho = interaction.options.getString('message');
 
-    // Reply with the message to echo
-    await interaction.reply({
-      content: messageToEcho,
-      ephemeral: false,
-    });
+    // Send the message to echo
+    await interaction.channel.send(messageToEcho);
+
+    // Delete the original command message if possible
+    if (interaction.deletable) {
+    await interaction.delete();
+  }
   },
 };

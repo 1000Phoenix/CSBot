@@ -108,3 +108,5 @@ logIdentifiersToDatabase().then(() => {
 }).catch((error) => {
     console.error("Error occurred:", error);
 });
+
+module.exports = { logIdentifiersToDatabase };

@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /home/botuser/csbot
+git pull
+pm2 restart bot.js

@@ -39,3 +39,5 @@ function logPlayerCount() {
 
 // Call the function immediately for cron job execution
 logPlayerCount();
+
+module.exports = { logPlayerCount };

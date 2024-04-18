@@ -91,4 +91,6 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
+require('./scheduler');
+
 client.login(config.token);

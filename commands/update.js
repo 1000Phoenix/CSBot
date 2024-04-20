@@ -20,7 +20,7 @@ module.exports = {
     });
 
     // Pull the latest changes from GitHub and restart the bot using PM2
-    exec('git pull && pm2 restart discord-bot', async (error, stdout, stderr) => {
+    exec('git pull && pm2 reload all', async (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
         await interaction.followUp({

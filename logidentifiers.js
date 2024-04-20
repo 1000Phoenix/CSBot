@@ -99,12 +99,12 @@ async function logIdentifiersToDatabase() {
 
 logIdentifiersToDatabase().then(() => {
     console.log("All asynchronous operations complete.");
-    pool.end((err) => {
-        if (err) {
-            console.error("Database error:", err);
-        }
-        console.log("Database connection closed.");
-    });
+    //pool.end((err) => {
+    //    if (err) {
+    //        console.error("Database error:", err);
+    //    }
+    //    console.log("Database connection closed.");
+    //});
 }).catch((error) => {
     console.error("Error occurred:", error);
 });

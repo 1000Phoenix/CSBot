@@ -93,4 +93,20 @@ client.on('interactionCreate', async interaction => {
 
 require('./scheduler');
 
+// Graceful MySQL shutdown handler
+process.on('SIGINT', () => {
+  console.log('Received SIGINT. Shutting down gracefully.');
+  // Assuming 'pool' is the MySQL connection pool you've created and is accessible here
+  pool.end((err) => {
+      if (err) {
+          console.error("Error closing the database pool:", err);
+      } else {
+          console.log("Database pool closed.");
+      }
+      // If you're using PM2 or another process manager, you might not need to call process.exit()
+      // as the process manager would handle the shutdown.
+      process.exit(0);
+  });
+});
+
 client.login(config.token);

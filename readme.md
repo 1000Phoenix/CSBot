@@ -48,10 +48,6 @@ Once CSBot is running, you can interact with it using the commands displayed in 
 
 Contributions to CSBot are welcome. Please ensure that you test your changes locally before creating a pull request.
 
-## License
-
-CSBot is released under the [MIT License](LICENSE).
-
 ## Support
 
 If you need help with CSBot, please open an issue on the GitHub repository.

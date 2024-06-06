@@ -19,6 +19,8 @@ CSBot is a Discord bot designed to integrate with your Discord server, providing
 
 To install and run CSBot, you'll need to have Node.js and Docker installed on your system.
 
+You will also need to ensure that you have a MySQL database set up for logging. In the below commands, I have assumed your mysql is part of the docker network "MySQL".
+
 1. Clone the repository:
    ```bash
    git clone git@github.com:your-username/csbot.git

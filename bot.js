@@ -4,7 +4,7 @@ const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 const config = require('./config.json');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 client.commands = new Map();
 
 const rest = new REST({ version: '9' }).setToken(config.token);

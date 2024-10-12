@@ -12,10 +12,14 @@ module.exports = {
     try {
       const totalPlayers = await srv.getPlayers();
 
+      const playerCountDescription = config.playercounturl ? 
+        `There are currently ${totalPlayers} players online.\n[View Playercount Graph](${config.playercounturl})` : 
+        `There are currently ${totalPlayers} players online.`;
+
       const playerCountEmbed = new EmbedBuilder()
         .setColor(config.embedColor)
         .setTitle('Player Count')
-        .setDescription(`There are currently ${totalPlayers} players online.\n[View 7-day Playercount Graph](https://thousandphoenix.grafana.net/public-dashboards/c50b0952bff946709b10c65155e7a723)`)
+        .setDescription(playerCountDescription)
         .setFooter({ text: config.botName, iconURL: config.botLogo })
         .setTimestamp();
 

@@ -1,12 +1,14 @@
 {
   "dependencies": {
+    "@discordjs/rest": "^2.4.0",
     "cors": "^2.8.5",
-    "discord-api-types": "^0.37.48",
-    "discord.js": "^14.11.0",
+    "discord-api-types": "^0.37.111",
+    "discord.js": "^14.16.3",
     "express": "^4.18.2",
     "fivem": "^2.1.8",
     "mysql": "^2.18.1",
     "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
     "pm2": "^5.3.1"
   }
 }

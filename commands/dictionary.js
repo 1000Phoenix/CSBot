@@ -14,7 +14,7 @@ module.exports = {
     ],
     async execute(interaction) {
         const word = interaction.options.getString('word');
-        const fetch = (await import('node-fetch')).default; // Dynamic import for node-fetch
+        const fetch = (await import('node-fetch')).default;
 
         try {
             const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);

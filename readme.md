@@ -1,6 +1,6 @@
 # CSBot
 
-CSBot is a Discord bot designed to integrate with your Discord server, providing various functionalities such as updating the bot, restarting, checking uptime, and more.
+CSBot is a Discord bot designed to bridge the gap between Fivem & you Discord server, providing various functionalities.
 
 ## Features
 

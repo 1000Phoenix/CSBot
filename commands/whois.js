@@ -40,10 +40,10 @@ async function execute(interaction) {
           .setTitle('Player Information')
           .setColor(config.embedColor)
           .addFields(
-            { name: 'Name', value: matchingPlayer.name },
-            { name: 'ID', value: matchingPlayer.id.toString() },
-            { name: 'Identifiers', value: identifiersWithEmojis.join('\n') },
-            { name: 'Ping', value: matchingPlayer.ping.toString() }
+            { name: 'Name', value: matchingPlayer.name || 'Unknown' },
+            { name: 'ID', value: matchingPlayer.id?.toString() || 'Unknown' },
+            { name: 'Identifiers', value: identifiersWithEmojis.length > 0 ? identifiersWithEmojis.join('\n') : 'No identifiers found' },
+            { name: 'Ping', value: matchingPlayer.ping?.toString() || 'Unknown' }
           )
           .setFooter({ text: config.botName, iconURL: config.botLogo })
           .setTimestamp();
@@ -53,9 +53,9 @@ async function execute(interaction) {
           .setTitle('Player Information')
           .setColor(config.embedColor)
           .addFields(
-            { name: 'Name', value: matchingPlayer.name },
-            { name: 'ID', value: matchingPlayer.id.toString() },
-            { name: 'Ping', value: matchingPlayer.ping.toString() }
+            { name: 'Name', value: matchingPlayer.name || 'Unknown' },
+            { name: 'ID', value: matchingPlayer.id?.toString() || 'Unknown' },
+            { name: 'Ping', value: matchingPlayer.ping?.toString() || 'Unknown' }
           )
           .setFooter({ text: config.botName, iconURL: config.botLogo })
           .setTimestamp();

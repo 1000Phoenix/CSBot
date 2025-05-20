@@ -27,10 +27,10 @@ async function execute(interaction) {
           .setTitle('Player Information')
           .setColor(config.embedColor)
           .addFields(
-            { name: 'Name', value: player.name },
-            { name: 'ID', value: player.id.toString() },
-            { name: 'Identifiers', value: identifiersWithEmojis.join('\n') },
-            { name: 'Ping', value: player.ping.toString() },
+            { name: 'Name', value: player.name || 'Unknown' },
+            { name: 'ID', value: player.id?.toString() || 'Unknown' },
+            { name: 'Identifiers', value: identifiersWithEmojis.length > 0 ? identifiersWithEmojis.join('\n') : 'No identifiers found' },
+            { name: 'Ping', value: player.ping?.toString() || 'Unknown' }
           )
           .setFooter({ text: config.botName, iconURL: config.botLogo })
           .setTimestamp();
